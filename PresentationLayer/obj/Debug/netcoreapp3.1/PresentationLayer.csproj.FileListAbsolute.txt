@@ -1,0 +1,13 @@
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\PresentationLayer.deps.json
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\PresentationLayer.dll
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\PresentationLayer.pdb
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\BusinessService.dll
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\DataStorage.dll
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\BusinessService.pdb
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\bin\Debug\netcoreapp3.1\DataStorage.pdb
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.csprojAssemblyReference.cache
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.AssemblyInfoInputs.cache
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.AssemblyInfo.cs
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.csproj.CopyComplete
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.dll
+C:\Users\a.sapotko\source\repos\UserBookedApartments\PresentationLayer\obj\Debug\netcoreapp3.1\PresentationLayer.pdb

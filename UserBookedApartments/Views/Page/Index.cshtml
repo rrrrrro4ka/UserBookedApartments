@@ -1,0 +1,19 @@
+﻿@using PresentationLayer.Models;
+@model PageViewModel
+
+
+@if (Model is ApartmentsViewModel)
+{
+    var currentModel = (ApartmentsViewModel)Model;
+    <h1>@currentModel.Apartments.Address</h1>
+    <p>Площадь - @Html.Raw(currentModel.Apartments.Area)</p>
+    <p>Количество комнат - @Html.Raw(currentModel.Apartments.Rooms)</p>
+    <p>Максимальное количество гостей - @Html.Raw(currentModel.Apartments.MaxGuets)</p>
+    <p>Цена - @Html.Raw(currentModel.Apartments.Cost)</p>
+}
+else if (Model is UsersViewModel)
+{
+    @*var currentModel = (UsersViewModel)Model;
+        <h1>@currentModel.Users.Login</h1>
+        <p>@Html.Raw(currentModel.Users.MobilePhone)</p>*@
+}

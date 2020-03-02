@@ -1,0 +1,77 @@
+﻿@using PresentationLayer.Models;
+@model PageEditModel
+
+@if (Model is ApartmentsEditModel)
+{
+    var currentModel = (ApartmentsEditModel)Model;
+    <form action="/Page/SaveApartment" method="post">
+        <input name="Id" type="hidden" value="@currentModel.Id" />
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.Address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.Area)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.Rooms)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.MaxGuets)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.Cost)
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Address" value="@currentModel.Address" />
+                </td>
+                <td>
+                    <input name="Area" value="@currentModel.Area" />
+                </td>
+                <td>
+                    <input name="Rooms" value="@currentModel.Rooms" />
+                </td>
+                <td>
+                    <input name="MaxGuests" value="@currentModel.MaxGuets" />
+                </td>
+                <td>
+                    <input name="Cost" value="@currentModel.Cost" />
+                </td>
+                <td>
+                    <input type="submit" value="Сохранить"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+}
+else if (Model is UsersEditModel)
+{
+    var currentModel = (UsersEditModel)Model;
+    <form action="/Page/SaveUser" method="post">
+        <input name="Id" type="hidden" value="@currentModel.Id" />
+        <table>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.Login)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => currentModel.MobilePhone)
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    <input name="Login" value="@currentModel.Login" />
+                </td>
+                <td>
+                    <input name="MobilePhone" value="@currentModel.MobilePhone" />
+                </td>
+                <td>
+                    <input type="submit" />
+                </td>
+            </tr>
+        </table>
+    </form>
+}

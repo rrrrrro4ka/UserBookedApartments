@@ -1,0 +1,33 @@
+﻿@using PresentationLayer.Models;
+@using DataStorage.Enums;
+@model List<ApartmentsViewModel>
+
+@{
+    ViewBag.Title = "Апартаменты";
+}
+<div>
+    <h3><a href="/User">Пользователи</a></h3>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId=0 asp-route-pageType="@PageEnums.PageType.Apartments">Создать Апартамент</a>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <h2>
+                        <a asp-action="Index" asp-controller="Page" asp-route-pageId="@item.Apartments.Id" asp-route-pageType="@PageEnums.PageType.Apartments">@item.Apartments.Address</a>
+                        <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId="@item.Apartments.Id" asp-route-pageType="@PageEnums.PageType.Apartments"> - Редактировать</a>
+                    </h2>
+                    <ul>
+                        <li>Площадь - @item.Apartments.Area</li>
+                        <li>Количество команта - @item.Apartments.Rooms</li>
+                        <li>Максимальное количество гостей - @item.Apartments.MaxGuets</li>
+                        <li>Цена - @item.Apartments.Cost</li>
+                    </ul>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
