@@ -5,6 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BusinessService.Implementations
 {
@@ -61,6 +64,35 @@ namespace BusinessService.Implementations
                 context.Entry(user).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             }
             context.SaveChanges();
+        }
+        public async Task<ActionResult<IEnumerable<User>>> GetAllUsersAsync()
+        {
+            return await context.Users.ToListAsync();
+        }
+
+        public async Task<ActionResult<User>> GetUserAsync(int userId)
+        {
+            return await context.Users.FindAsync(userId);
+        }
+
+        public async Task AddUserAsync(User user)
+        {
+            var userAdd = await context.Users.FindAsync(user.Id);
+            if (userAdd == null)
+            {
+                context.Users.Add(user);
+                await context.SaveChangesAsync();
+            }
+        }
+
+        public async Task DeleteUserAsync(int userid)
+        {
+            var user = await context.Users.FindAsync(userid);
+            if (user != null)
+            {
+                context.Users.Remove(user);
+                await context.SaveChangesAsync();
+            }
         }
     }
 }
