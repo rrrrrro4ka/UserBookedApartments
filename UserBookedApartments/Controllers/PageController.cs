@@ -23,7 +23,7 @@ namespace UserBookedApartments.Controllers
         }
 
         /// <summary>
-        /// Открываем страницу с нужной инфомрацией в зависимости от типа.
+        /// Открываем страницу с нужной информацией в зависимости от типа.
         /// </summary>
         /// <param name="pageId"></param>
         /// <param name="pageType"></param>
