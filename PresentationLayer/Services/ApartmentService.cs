@@ -94,9 +94,13 @@ namespace PresentationLayer.Services
             return ApartmentDBToViewModelById(apartmentDBModel.Id);
         }
 
-        public void DeleteApartment()
+        /// <summary>
+        /// Удаление апартамента
+        /// </summary>
+        /// <param name="ApartmentViewModelId"></param>
+        public void DeleteApartment(int ApartmentViewModelId)
         {
-
+            dataManager.Apartments.DeleteApartment(ApartmentViewModelId);
         }
         /// <summary>
         /// Создаём новую модель для пользователя.

@@ -20,9 +20,9 @@ namespace BusinessService.Implementations
         /// Удаление апартамента
         /// </summary>
         /// <param name="aps"></param>
-        public void DeleteApartment(Apartments aps)
+        public void DeleteApartment(int apsId)
         {
-            var apsToDelete = context.Apartments.FirstOrDefault(a => a.Id == aps.Id);
+            var apsToDelete = context.Apartments.FirstOrDefault(a => a.Id == apsId);
             if (apsToDelete != null) context.Apartments.Remove(apsToDelete);
             context.SaveChanges();
         }

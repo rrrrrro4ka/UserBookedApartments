@@ -24,5 +24,15 @@ namespace UserBookedApartments.Controllers
             List<UsersViewModel> userListModel = servicesManager.Users.GetUsersList();
             return View(userListModel);
         }
+
+        /// <summary>
+        /// Удаление пользователя
+        /// </summary>
+        [HttpPost]
+        public IActionResult DeleteUser(int id)
+        {
+            servicesManager.Users.DeleteUser(id);
+            return RedirectToAction("Index", "User");
+        }
     }
 }

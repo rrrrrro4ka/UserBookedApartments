@@ -74,7 +74,7 @@ namespace UserBookedApartments.Controllers
         public IActionResult SaveApartment(ApartmentsEditModel apartmentEditModel)
         {
             servicesManager.Apartments.SaveApartmentEditModelToDB(apartmentEditModel);
-            return RedirectToAction("PageEditor", "Page", new { pageId = apartmentEditModel.Id, pageType = PageType.Apartments });
+            return RedirectToAction("Index", "Home");
         }
 
         /// <summary>
@@ -86,7 +86,7 @@ namespace UserBookedApartments.Controllers
         public IActionResult SaveUser(UsersEditModel userEditModel)
         {
             servicesManager.Users.SaveUserEditModelToDb(userEditModel);
-            return RedirectToAction("PageEditor", "Page", new { pageId = userEditModel.Id, pageType = PageType.Users });
+            return RedirectToAction("Index", "User");
         }
     }
 }

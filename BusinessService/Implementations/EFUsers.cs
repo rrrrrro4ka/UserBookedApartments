@@ -23,9 +23,9 @@ namespace BusinessService.Implementations
         /// Удалить пользователя
         /// </summary>
         /// <param name="user"></param>
-        public void DeleteUser(User user)
+        public void DeleteUser(int userId)
         {
-            var userToDelete = context.Users.FirstOrDefault(u => u.Id == user.Id);
+            var userToDelete = context.Users.FirstOrDefault(u => u.Id == userId);
             if (userToDelete != null) context.Remove(userToDelete);
             context.SaveChanges();
         }
@@ -65,16 +65,31 @@ namespace BusinessService.Implementations
             }
             context.SaveChanges();
         }
+
+        /// <summary>
+        /// Список пользователей для API
+        /// </summary>
+        /// <returns></returns>
         public async Task<ActionResult<IEnumerable<User>>> GetAllUsersAsync()
         {
             return await context.Users.ToListAsync();
         }
 
+        /// <summary>
+        /// Отдаём одного пользователя по id. API
+        /// </summary>
+        /// <param name="userId"></param>
+        /// <returns></returns>
         public async Task<ActionResult<User>> GetUserAsync(int userId)
         {
             return await context.Users.FindAsync(userId);
         }
 
+        /// <summary>
+        /// Добавляем пользователя, ожидаем JSON. API
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public async Task AddUserAsync(User user)
         {
             var userAdd = await context.Users.FindAsync(user.Id);
@@ -85,6 +100,11 @@ namespace BusinessService.Implementations
             }
         }
 
+        /// <summary>
+        /// Удаления пользователя. API
+        /// </summary>
+        /// <param name="userid"></param>
+        /// <returns></returns>
         public async Task DeleteUserAsync(int userid)
         {
             var user = await context.Users.FindAsync(userid);

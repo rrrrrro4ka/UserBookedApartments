@@ -87,6 +87,15 @@ namespace PresentationLayer.Services
         }
 
         /// <summary>
+        /// Удаление пользователя
+        /// </summary>
+        /// <param name="userViewModelId"></param>
+        public void DeleteUser(int userViewModelId)
+        {
+            dataManager.Users.DeleteUser(userViewModelId);
+        }
+
+        /// <summary>
         /// Создаём новую модель пользователя.
         /// </summary>
         /// <returns></returns>

@@ -5,12 +5,12 @@
 @{
     ViewBag.Title = "Пользователи";
 }
-    <div>
-        <h3><a href="/Home">Апартаменты</a></h3>
-    </div>
+<div>
+    <h3><a href="/Home">Апартаменты</a></h3>
+</div>
 <div class="row">
     <div class="col-md-12">
-            <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId=0 asp-route-pageType="@PageEnums.PageType.Users">Добавить пользователя</a>
+        <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId=0 asp-route-pageType="@PageEnums.PageType.Users">Добавить пользователя</a>
         <ul>
             @foreach (var item in Model)
             {
@@ -19,10 +19,14 @@
                         <a asp-action="Index" asp-controller="Page" asp-route-pageId="@item.Users.Id" asp-route-pageType="@PageEnums.PageType.Users">@item.Users.Login</a>
                         <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId="@item.Users.Id" asp-route-pageType="@PageEnums.PageType.Users"> - Редактировать</a>
                     </h2>
-                    <ul>
-                        <li>Login - @item.Users.Login</li>
-                        <li>Телефон - @item.Users.MobilePhone</li>
-                    </ul>
+                    <form action="/User/DeleteUser" method="post">
+                        <input name="Id" type="hidden" value="@item.Users.Id" />
+                        <input type="submit" value="Удалить" />
+                        <ul>
+                            <li>Login - @item.Users.Login</li>
+                            <li>Телефон - @item.Users.MobilePhone</li>
+                        </ul>
+                    </form>
                 </li>
             }
         </ul>

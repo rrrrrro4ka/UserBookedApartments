@@ -14,7 +14,7 @@ namespace BusinessService.Interfaces
         User GetUsersbyId(int userid);
         Task<ActionResult<User>> GetUserAsync(int userId);
         void SaveUser(User user);
-        void DeleteUser(User user);
+        void DeleteUser(int userId);
         Task DeleteUserAsync(int userid);
         Task AddUserAsync(User user);
     }

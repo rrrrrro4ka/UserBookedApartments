@@ -10,6 +10,6 @@ namespace BusinessService.Interfaces
         IEnumerable<Apartments> GetAllApartments();
         Apartments GetApartmentsbyId(int apartmentId);
         void SaveApartment(Apartments aps);
-        void DeleteApartment(Apartments aps);
+        void DeleteApartment(int apsId);
     }
 }

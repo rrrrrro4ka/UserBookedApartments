@@ -19,12 +19,16 @@
                         <a asp-action="Index" asp-controller="Page" asp-route-pageId="@item.Apartments.Id" asp-route-pageType="@PageEnums.PageType.Apartments">@item.Apartments.Address</a>
                         <a asp-action="PageEditor" asp-controller="Page" asp-route-pageId="@item.Apartments.Id" asp-route-pageType="@PageEnums.PageType.Apartments"> - Редактировать</a>
                     </h2>
-                    <ul>
-                        <li>Площадь - @item.Apartments.Area</li>
-                        <li>Количество команта - @item.Apartments.Rooms</li>
-                        <li>Максимальное количество гостей - @item.Apartments.MaxGuets</li>
-                        <li>Цена - @item.Apartments.Cost</li>
-                    </ul>
+                    <form action="/Home/DeleteApartment" method="post">
+                        <input name="Id" type="hidden" value="@item.Apartments.Id" />
+                        <input type="submit" value="Удалить" />
+                        <ul>
+                            <li>Площадь - @item.Apartments.Area</li>
+                            <li>Количество команта - @item.Apartments.Rooms</li>
+                            <li>Максимальное количество гостей - @item.Apartments.MaxGuets</li>
+                            <li>Цена - @item.Apartments.Cost</li>
+                        </ul>
+                    </form>
                 </li>
             }
         </ul>

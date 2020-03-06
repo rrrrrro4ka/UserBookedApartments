@@ -40,5 +40,15 @@ namespace UserBookedApartments.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        /// <summary>
+        /// Удаление апартмента из списка
+        /// </summary>
+        [HttpPost]
+        public IActionResult DeleteApartment(int id)
+        {
+            serviceManager.Apartments.DeleteApartment(id);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }
