@@ -19,7 +19,7 @@ namespace UserBookedApartments.Controllers
         {
             this.dataManager = dataManager;
         }
-       
+
         // GET: api/Users
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> GetUsers()
